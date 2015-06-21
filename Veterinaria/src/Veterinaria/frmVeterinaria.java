@@ -5,17 +5,32 @@
  */
 package Veterinaria;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author reydi
  */
 public class frmVeterinaria extends javax.swing.JFrame {
-
+    public DefaultTableModel model;
+    public ArrayList<Citas> cita = new ArrayList<>(); 
+    public ArrayList<Personas> cliente = new ArrayList<>();
+    public ArrayList<Personas> persona = new ArrayList<>();
+    public ArrayList<Mascotas> mascota = new ArrayList<>();
+    Citas recep = new Citas();
+    Mascotas ani = new Mascotas();       
+    Personas clie = new Personas();
+    String datos [][] = {};
+    String titulo [] = {"Cliente","Mascota","Nombre","Edad"};
     /**
      * Creates new form frmVeterinaria
      */
     public frmVeterinaria() {
         initComponents();
+        model = new DefaultTableModel(datos, titulo);
+        tblGeneral.setModel(model);
     }
 
     /**
@@ -27,21 +42,135 @@ public class frmVeterinaria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitulo = new javax.swing.JLabel();
+        btnConsultarMascota = new javax.swing.JButton();
+        btnEliminarMascota = new javax.swing.JButton();
+        btnInsertaMascota = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblGeneral = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Veterinaria R.E.Z");
+
+        lblTitulo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblTitulo.setText("Veterinaria R.E.Z");
+
+        btnConsultarMascota.setText("Consultar Mascota");
+        btnConsultarMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarMascotaActionPerformed(evt);
+            }
+        });
+
+        btnEliminarMascota.setText("Eliminar Mascota");
+        btnEliminarMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMascotaActionPerformed(evt);
+            }
+        });
+
+        btnInsertaMascota.setText("Insertar Mascota");
+        btnInsertaMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertaMascotaActionPerformed(evt);
+            }
+        });
+
+        tblGeneral.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cliente", "Mascota", "Edad", "Nro Cita"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblGeneral);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(lblTitulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnInsertaMascota)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnConsultarMascota)
+                                .addGap(37, 37, 37)
+                                .addComponent(btnEliminarMascota))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnConsultarMascota)
+                    .addComponent(btnEliminarMascota)
+                    .addComponent(btnInsertaMascota))
+                .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnConsultarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarMascotaActionPerformed
+        int columna;
+        int respuesta = 0;
+        
+        clie.setNombre("texto que se recibe");
+        //mascota.setTipoAnimal("");
+        //mascota.setEdad(Integer.parseInt(spEdad.getValue().toString()));   
+        /*     
+        String data[] = {alum.getNombre(),
+                        alum.getApellido(),
+                        String.valueOf(alum.getEdad()),
+                        String.valueOf(alum.getPromedio())
+                        };
+            model.addRow(data);
+        */    
+        try {
+            columna = tblGeneral.getSelectedColumn();
+            if(columna == -1){
+                JOptionPane.showMessageDialog(null, "Seleccione un cliente","Avertencia",JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Seguro que desea eliminar una mascota","Eliminar",JOptionPane.YES_NO_CANCEL_OPTION);
+            if(respuesta == JOptionPane.YES_OPTION){
+                
+            }
+        }
+    }//GEN-LAST:event_btnConsultarMascotaActionPerformed
+
+    private void btnEliminarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMascotaActionPerformed
+        
+    }//GEN-LAST:event_btnEliminarMascotaActionPerformed
+
+    private void btnInsertaMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertaMascotaActionPerformed
+        frmInsertarMascota insertar = new frmInsertarMascota();
+        insertar.setVisible(true);
+        
+        
+    }//GEN-LAST:event_btnInsertaMascotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +208,11 @@ public class frmVeterinaria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConsultarMascota;
+    private javax.swing.JButton btnEliminarMascota;
+    private javax.swing.JButton btnInsertaMascota;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTable tblGeneral;
     // End of variables declaration//GEN-END:variables
 }
