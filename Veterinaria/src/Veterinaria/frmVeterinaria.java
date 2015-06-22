@@ -5,32 +5,18 @@
  */
 package Veterinaria;
 
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author reydi
  */
 public class frmVeterinaria extends javax.swing.JFrame {
-    public DefaultTableModel model;
-    public ArrayList<Citas> cita = new ArrayList<>(); 
-    public ArrayList<Personas> cliente = new ArrayList<>();
-    public ArrayList<Personas> persona = new ArrayList<>();
-    public ArrayList<Mascotas> mascota = new ArrayList<>();
-    Citas recep = new Citas();
-    Mascotas ani = new Mascotas();       
-    Personas clie = new Personas();
-    String datos [][] = {};
-    String titulo [] = {"Cliente","Mascota","Nombre","Edad"};
+
     /**
      * Creates new form frmVeterinaria
      */
     public frmVeterinaria() {
         initComponents();
-        model = new DefaultTableModel(datos, titulo);
-        tblGeneral.setModel(model);
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -42,135 +28,97 @@ public class frmVeterinaria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitulo = new javax.swing.JLabel();
-        btnConsultarMascota = new javax.swing.JButton();
-        btnEliminarMascota = new javax.swing.JButton();
-        btnInsertaMascota = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblGeneral = new javax.swing.JTable();
+        desktopPane = new javax.swing.JDesktopPane();
+        menuBar = new javax.swing.JMenuBar();
+        fileMenu = new javax.swing.JMenu();
+        openMenuItem = new javax.swing.JMenuItem();
+        persona = new javax.swing.JMenuItem();
+        mascota = new javax.swing.JMenuItem();
+        exitMenuItem = new javax.swing.JMenuItem();
+        helpMenu = new javax.swing.JMenu();
+        contentMenuItem = new javax.swing.JMenuItem();
+        aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Veterinaria R.E.Z");
 
-        lblTitulo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lblTitulo.setText("Veterinaria R.E.Z");
+        fileMenu.setMnemonic('f');
+        fileMenu.setText("Nuevo");
 
-        btnConsultarMascota.setText("Consultar Mascota");
-        btnConsultarMascota.addActionListener(new java.awt.event.ActionListener() {
+        openMenuItem.setMnemonic('o');
+        openMenuItem.setText("Cliente");
+        openMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultarMascotaActionPerformed(evt);
+                openMenuItemActionPerformed(evt);
             }
         });
+        fileMenu.add(openMenuItem);
 
-        btnEliminarMascota.setText("Eliminar Mascota");
-        btnEliminarMascota.addActionListener(new java.awt.event.ActionListener() {
+        persona.setMnemonic('s');
+        persona.setText("Persona");
+        fileMenu.add(persona);
+
+        mascota.setMnemonic('a');
+        mascota.setText("Mascota");
+        mascota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarMascotaActionPerformed(evt);
+                mascotaActionPerformed(evt);
             }
         });
+        fileMenu.add(mascota);
 
-        btnInsertaMascota.setText("Insertar Mascota");
-        btnInsertaMascota.addActionListener(new java.awt.event.ActionListener() {
+        exitMenuItem.setMnemonic('x');
+        exitMenuItem.setText("Exit");
+        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertaMascotaActionPerformed(evt);
+                exitMenuItemActionPerformed(evt);
             }
         });
+        fileMenu.add(exitMenuItem);
 
-        tblGeneral.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        menuBar.add(fileMenu);
 
-            },
-            new String [] {
-                "Cliente", "Mascota", "Edad", "Nro Cita"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
+        helpMenu.setMnemonic('h');
+        helpMenu.setText("Help");
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tblGeneral);
+        contentMenuItem.setMnemonic('c');
+        contentMenuItem.setText("Contents");
+        helpMenu.add(contentMenuItem);
+
+        aboutMenuItem.setMnemonic('a');
+        aboutMenuItem.setText("About");
+        helpMenu.add(aboutMenuItem);
+
+        menuBar.add(helpMenu);
+
+        setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(lblTitulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnInsertaMascota)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnConsultarMascota)
-                                .addGap(37, 37, 37)
-                                .addComponent(btnEliminarMascota))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(56, Short.MAX_VALUE))
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConsultarMascota)
-                    .addComponent(btnEliminarMascota)
-                    .addComponent(btnInsertaMascota))
-                .addGap(20, 20, 20))
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnConsultarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarMascotaActionPerformed
-        int columna;
-        int respuesta = 0;
-        
-        clie.setNombre("texto que se recibe");
-        //mascota.setTipoAnimal("");
-        //mascota.setEdad(Integer.parseInt(spEdad.getValue().toString()));   
-        /*     
-        String data[] = {alum.getNombre(),
-                        alum.getApellido(),
-                        String.valueOf(alum.getEdad()),
-                        String.valueOf(alum.getPromedio())
-                        };
-            model.addRow(data);
-        */    
-        try {
-            columna = tblGeneral.getSelectedColumn();
-            if(columna == -1){
-                JOptionPane.showMessageDialog(null, "Seleccione un cliente","Avertencia",JOptionPane.WARNING_MESSAGE);
-            }
-        } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, "Seguro que desea eliminar una mascota","Eliminar",JOptionPane.YES_NO_CANCEL_OPTION);
-            if(respuesta == JOptionPane.YES_OPTION){
-                
-            }
-        }
-    }//GEN-LAST:event_btnConsultarMascotaActionPerformed
+    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void btnEliminarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMascotaActionPerformed
+    private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
         
-    }//GEN-LAST:event_btnEliminarMascotaActionPerformed
+    }//GEN-LAST:event_openMenuItemActionPerformed
 
-    private void btnInsertaMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertaMascotaActionPerformed
-        frmInsertarMascota insertar = new frmInsertarMascota();
-        insertar.setVisible(true);
-        
-        
-    }//GEN-LAST:event_btnInsertaMascotaActionPerformed
+    private void mascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mascotaActionPerformed
+        frmInsertarMascota insert = new frmInsertarMascota();
+        insert.setVisible(true);
+        desktopPane.add(insert);
+    }//GEN-LAST:event_mascotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,11 +156,16 @@ public class frmVeterinaria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnConsultarMascota;
-    private javax.swing.JButton btnEliminarMascota;
-    private javax.swing.JButton btnInsertaMascota;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTable tblGeneral;
+    private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JMenuItem contentMenuItem;
+    private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JMenuItem exitMenuItem;
+    private javax.swing.JMenu fileMenu;
+    private javax.swing.JMenu helpMenu;
+    private javax.swing.JMenuItem mascota;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuItem openMenuItem;
+    private javax.swing.JMenuItem persona;
     // End of variables declaration//GEN-END:variables
+
 }
