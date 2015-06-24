@@ -4,10 +4,12 @@ package Veterinaria;
  * @author reydi
  */
 public class frmVeterinaria extends javax.swing.JFrame {
+    
 
     public frmVeterinaria() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -15,14 +17,24 @@ public class frmVeterinaria extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        btnConsultarCliente1 = new javax.swing.JButton();
+        btnEliminarCliente1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnAgregarCliente1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        btnConsultarPersona = new javax.swing.JButton();
+        btnEliminarPersona = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        btnAgregarPersona = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        ConsultarMascota = new javax.swing.JButton();
+        btnEliminarMascota = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        btnAgregarMascota = new javax.swing.JButton();
+        btnRegistroCitas = new javax.swing.JButton();
+        btnFechaVacunaciones = new javax.swing.JButton();
+        btnHistorialMedico = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -41,68 +53,155 @@ public class frmVeterinaria extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel4.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1.setText("Agregar");
+        btnConsultarCliente1.setText("Consultar");
 
-        jLabel1.setText("Cliente");
+        btnEliminarCliente1.setText("Eliminar");
 
-        jLabel2.setText("Persona");
-        jLabel2.setToolTipText("");
+        jLabel2.setText("Cliente");
 
-        jLabel3.setText("Agregar una Mascota");
+        btnAgregarCliente1.setText("Agregar");
+        btnAgregarCliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarClienteActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Agregar");
-
-        jButton3.setText("jButton3");
-
-        jButton4.setText("jButton4");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addGap(55, 55, 55)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jButton3))
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(40, 40, 40)
+                .addComponent(btnAgregarCliente1)
+                .addGap(41, 41, 41)
+                .addComponent(btnConsultarCliente1)
+                .addGap(53, 53, 53)
+                .addComponent(btnEliminarCliente1)
+                .addGap(65, 65, 65))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(21, 21, 21)
-                        .addComponent(jButton2)
-                        .addGap(17, 17, 17)
-                        .addComponent(jButton3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jButton4))
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel2)
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel3)))
-                .addContainerGap(110, Short.MAX_VALUE))
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(btnAgregarCliente1)
+                    .addComponent(btnConsultarCliente1)
+                    .addComponent(btnEliminarCliente1))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        desktopPane.add(jPanel1);
-        jPanel1.setBounds(290, 140, 480, 300);
+        desktopPane.add(jPanel4);
+        jPanel4.setBounds(210, 140, 550, 73);
+
+        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btnConsultarPersona.setText("Consultar");
+
+        btnEliminarPersona.setText("Eliminar");
+
+        jLabel4.setText("Persona");
+
+        btnAgregarPersona.setText("Agregar");
+        btnAgregarPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarPersonaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(40, 40, 40)
+                .addComponent(btnAgregarPersona)
+                .addGap(41, 41, 41)
+                .addComponent(btnConsultarPersona)
+                .addGap(53, 53, 53)
+                .addComponent(btnEliminarPersona)
+                .addGap(65, 65, 65))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(btnAgregarPersona)
+                    .addComponent(btnConsultarPersona)
+                    .addComponent(btnEliminarPersona))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        desktopPane.add(jPanel2);
+        jPanel2.setBounds(210, 240, 551, 73);
+
+        jPanel3.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        ConsultarMascota.setText("Consultar");
+
+        btnEliminarMascota.setText("Eliminar");
+
+        jLabel5.setText("Mascota");
+
+        btnAgregarMascota.setText("Agregar");
+        btnAgregarMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarMascotaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(40, 40, 40)
+                .addComponent(btnAgregarMascota)
+                .addGap(41, 41, 41)
+                .addComponent(ConsultarMascota)
+                .addGap(53, 53, 53)
+                .addComponent(btnEliminarMascota)
+                .addGap(65, 65, 65))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(btnAgregarMascota)
+                    .addComponent(ConsultarMascota)
+                    .addComponent(btnEliminarMascota))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        desktopPane.add(jPanel3);
+        jPanel3.setBounds(210, 350, 552, 73);
+
+        btnRegistroCitas.setText("Registro de Citas");
+        desktopPane.add(btnRegistroCitas);
+        btnRegistroCitas.setBounds(840, 160, 180, 25);
+
+        btnFechaVacunaciones.setText("Fecha de Vacunaciones");
+        desktopPane.add(btnFechaVacunaciones);
+        btnFechaVacunaciones.setBounds(840, 270, 180, 25);
+
+        btnHistorialMedico.setText("Historial medico");
+        desktopPane.add(btnHistorialMedico);
+        btnHistorialMedico.setBounds(840, 380, 180, 25);
 
         jMenu2.setText("Inicio");
 
@@ -184,7 +283,7 @@ public class frmVeterinaria extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1057, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,6 +315,24 @@ public class frmVeterinaria extends javax.swing.JFrame {
         insert.setVisible(true);
         desktopPane.add(insert);
     }//GEN-LAST:event_personaActionPerformed
+
+    private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarClienteActionPerformed
+        frmInsertarCliente insert = new frmInsertarCliente();
+        insert.setVisible(true);
+        desktopPane.add(insert);
+    }//GEN-LAST:event_btnAgregarClienteActionPerformed
+
+    private void btnAgregarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPersonaActionPerformed
+        frmInsertarPersona insert = new frmInsertarPersona();
+        insert.setVisible(true);
+        desktopPane.add(insert);
+    }//GEN-LAST:event_btnAgregarPersonaActionPerformed
+
+    private void btnAgregarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMascotaActionPerformed
+        frmInsertarMascota insert = new frmInsertarMascota();
+        insert.setVisible(true);
+        desktopPane.add(insert);
+    }//GEN-LAST:event_btnAgregarMascotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,20 +370,32 @@ public class frmVeterinaria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ConsultarMascota;
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JButton btnAgregarCliente;
+    private javax.swing.JButton btnAgregarCliente1;
+    private javax.swing.JButton btnAgregarMascota;
+    private javax.swing.JButton btnAgregarPersona;
+    private javax.swing.JButton btnConsultarCliente;
+    private javax.swing.JButton btnConsultarCliente1;
+    private javax.swing.JButton btnConsultarPersona;
+    private javax.swing.JButton btnEliminarCliente;
+    private javax.swing.JButton btnEliminarCliente1;
+    private javax.swing.JButton btnEliminarMascota;
+    private javax.swing.JButton btnEliminarPersona;
+    private javax.swing.JButton btnFechaVacunaciones;
+    private javax.swing.JButton btnHistorialMedico;
+    private javax.swing.JButton btnRegistroCitas;
     private javax.swing.JMenuItem cliente;
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;
@@ -274,6 +403,9 @@ public class frmVeterinaria extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JMenuItem mascota;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem persona;
