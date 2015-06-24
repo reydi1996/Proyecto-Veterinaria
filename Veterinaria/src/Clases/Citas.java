@@ -14,5 +14,21 @@ import java.util.Date;
 public class Citas {
     private int nroCitas;
     private Date fecha;
+
+    public int getNroCitas() {
+        return nroCitas;
+    }
+
+    public void setNroCitas(int nroCitas) {
+        this.nroCitas = nroCitas;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
     
 }

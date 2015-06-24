@@ -10,19 +10,10 @@ package Clases;
  * @author  ROLANDO_GUADALUPE
  */
 public class Persona extends Cliente {    
-    private String nombre;
     private String apellido;
     private int telefono;
     private int cell;
     private String direccion;
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public String getApellido() {
         return apellido;

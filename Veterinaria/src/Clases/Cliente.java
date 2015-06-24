@@ -10,6 +10,22 @@ package Clases;
  * @author  ROLANDO_GUADALUPE
  */
 public class Cliente {
-    private String nombre;
+    private String nombreCliente;
     private String genero;    
+
+    public String getNombre() {
+        return nombreCliente;
+    }
+
+    public void setNombre(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
 }    
