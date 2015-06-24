@@ -118,6 +118,7 @@ public class frmVeterinaria extends javax.swing.JFrame {
         frmInsertarMascota insert = new frmInsertarMascota();
         insert.setVisible(true);
         desktopPane.add(insert);
+        
     }//GEN-LAST:event_mascotaActionPerformed
 
     /**

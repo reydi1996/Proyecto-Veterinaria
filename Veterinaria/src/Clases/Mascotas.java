@@ -13,6 +13,15 @@ public class Mascotas {
     private String nombre;
     private String tipoAnimal;
     private int edad;
+    private String cliente;
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
 
     public String getNombre() {
         return nombre;
